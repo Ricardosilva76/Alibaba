@@ -1,29 +1,42 @@
-# Parts20 — loja de peças automóveis
-
-Aplicação React + Vite para correr localmente no Windows.
+# Parts20 — loja de peças e acessórios automóveis
 
 ## Requisitos
-- Node.js 20 ou superior
+- Windows 10/11
+- Node.js 20+ (recomendado Node 24)
 - npm
 
-## Instalação
+## Arranque
+1. Abra o CMD na pasta do projeto.
+2. Execute:
+
 ```cmd
 npm install
 npm run dev
 ```
-Abrir http://localhost:5173
+
+3. Abra `http://localhost:5173`.
+
+Também pode executar `INICIAR-WINDOWS.bat`.
 
 ## Funcionalidades
-- Catálogo de peças automóveis com pesquisa e categorias
-- Página de produto e carrinho
-- Registo e início de sessão locais
-- Checkout e histórico de encomendas
-- Comprovativo PDF e pré-visualização de email
-- Referência de pagamento fictícia para testes: fica pendente durante 5 minutos e depois muda automaticamente para um estado de teste. O ecrã apresenta aviso de que não é um pagamento real.
-- Dados armazenados no localStorage do navegador
+- Catálogo por categorias, pesquisa e referências de produto
+- Página de produto, carrinho e checkout
+- Registo e login de cliente locais
+- Histórico de encomendas
+- Comprovativo PDF e preview de email
+- Produto principal: Faróis Xenon BMW E90 LCI, 300 € por unidade
+- Duas unidades: 600 € + 48 € envio = 648 €
 
-## Importante sobre pagamentos
-A referência apresentada é apenas uma simulação local. Não corresponde a uma referência Multibanco válida, não contacta bancos e não confirma recebimento de dinheiro. Não a utilizar para cobrar clientes. Para pagamentos reais é necessário um prestador autorizado, credenciais de produção e confirmação no servidor através de callback/webhook verificado.
+## Pagamento
+A referência apresentada é fictícia e serve apenas para testes locais. O estado "Pago (simulação)" é um estado gerado pela própria aplicação, não uma confirmação bancária. Não deve ser usado para cobrar clientes nem como comprovativo de pagamento real.
 
-## Próximos passos para produção
-Mover utilizadores, sessões, encomendas, stock e estado de pagamento para uma API/backend com base de dados. Nunca guardar passwords em texto simples ou confiar no estado de pagamento enviado pelo navegador.
+## Armazenamento e segurança
+Esta versão guarda contas, carrinho e encomendas no `localStorage` do navegador. Não armazena palavras-passe de forma segura e não deve receber dados pessoais reais. Para produção, substituir por backend, base de dados, autenticação segura e integração de pagamento com confirmação server-side.
+
+## Imagens
+As fotografias externas são imagens ilustrativas de automóveis/peças e são carregadas a partir de URLs públicos. Para catálogo comercial, substituir pelas fotografias próprias do fornecedor e confirmar licenças, referências e compatibilidade de cada peça.
+
+## Build
+```cmd
+npm run build
+```
